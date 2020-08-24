@@ -32,9 +32,15 @@ function display() {
 
 };
 
+/* needs question object built to complete logic
 function answerSubmit() {
-    answerFeedback.innerHTML = "Wrong!"
+    if () {
+        answerFeedback.innerHTML = "Correct!";
+    } else {
+    answerFeedback.innerHTML = "Wrong!";
+    }
 };
+*/
 
 // Start button will execute timer funciton when clicked
 startButton.addEventListener("click", timer);
