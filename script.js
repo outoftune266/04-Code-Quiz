@@ -3,6 +3,11 @@ let timerDisplay = document.querySelector(".timerValue");
 let startButton = document.querySelector(".start");
 let startScreen = document.querySelector("#startScreen");
 let questionScreen = document.querySelector("#questionScreen");
+let answerOne = document.querySelector("#answerOne");
+let answerTwo = document.querySelector("#answerTwo");
+let answerThree = document.querySelector("#answerThree");
+let answerFour = document.querySelector("#answerFour");
+let answerFeedback = document.querySelector("#answerFeedback");
 
 // timer function counts down from totalSeconds, when it reaches zero an alert is displayed and timer function stops
 function timer() {
@@ -27,6 +32,14 @@ function display() {
 
 };
 
+function answerSubmit() {
+    answerFeedback.innerHTML = "Wrong!"
+};
+
 // Start button will execute timer funciton when clicked
 startButton.addEventListener("click", timer);
 
+answerOne.addEventListener("click", answerSubmit);
+answerTwo.addEventListener("click", answerSubmit);
+answerThree.addEventListener("click", answerSubmit);
+answerFour.addEventListener("click", answerSubmit);
