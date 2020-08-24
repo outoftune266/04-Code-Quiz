@@ -4,10 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link href="script.js" rel="stylesheet"> 
+    <link href="style.css" rel="stylesheet"> 
 </head>
 <body>
-    
+    <!--navbar to contain timer and high score link-->
+    <head>
+        <a href="*">Highscores</a>
+        <div class="time">
+            <p>Seconds Remaining: <span class="timerValue">100</span></p>
+        </div>
+    </head>
+
+    <!--Quiz window-->
+    <main>
+        <div class="startScreen">
+            <h1>Quiz!</h1>
+            <h2>Instructions</h2>
+            <button>Click to Start</button>
+        </div>
+
+        <div class="question">
+            <h1>Question #<span class="questionNumber">1</span></h1>
+            <h2>Is this question one?</h2>
+            <ul>
+                <li>Answer 1</li>
+                <li>Answer 2</li>
+                <li>Answer 3</li>
+                <li>Answer 4</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>Designed and built by Zak Monnet</p>
+        <p>&#169 Zak Monnet, 2020</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
