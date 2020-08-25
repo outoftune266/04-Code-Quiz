@@ -16,11 +16,24 @@ let leaderboardScreen = document.querySelector("#leaderboard");
 let startscreenButton = document.querySelector("#startscreenButton");
 let leaderboardInput = document.querySelector("#leaderboardInput");
 let finalScoreDisplay = document.querySelector("#finalScore");
+let initialsBox = document.querySelector("#initialsBox");
+let submissionButton = document.querySelector("#submissionButton");
 let number = 0;
 let clock;
 let totalSeconds = 0;
 let totalScore = 0;
 let playerInitials;
+let leaderboardEntries = [];
+
+getScores();
+
+function getScores() {
+    var storedScores = JSON.parse(localStorage.getItem("leaderboardEntries"));
+
+    if (storedScores !== null) {
+        leaderboardEntries = storedScores;
+    }
+};
 
 // timer function counts down from totalSeconds, when it reaches zero an alert is displayed and timer function stops
 function timer() {
@@ -29,7 +42,6 @@ function timer() {
 
     clock = setInterval(function () {
         totalSeconds++;
-
         timerDisplay.textContent = 100 - totalSeconds;
 
         if (totalSeconds === 100) {
@@ -86,6 +98,24 @@ function gameOver() {
     finalScoreDisplay.textContent = totalScore;
 };
 
+function saveScore(event) {
+    event.preventDefault();
+    playerInitials = initialsBox.value;
+    playerInitials = playerInitials.toUpperCase();
+
+    addEntry(totalScore, playerInitials);
+
+    console.log(leaderboardEntries);
+    localStorage.setItem("leaderboardEntries", JSON.stringify(leaderboardEntries));
+    /*document.createElement("tr");
+    document.appendChild()
+    console.log(playerInitials);*/
+};
+
+function addEntry(totalScore, playerInitials) {
+    leaderboardEntries.push({ totalScore, playerInitials });
+};
+
 function showLeaderboard() {
     startScreen.className = "hidden";
     questionScreen.className = "hidden";
@@ -120,3 +150,5 @@ nextButton.addEventListener("click", advanceQuestion);
 //These buttons allow to switch back and forth from Start Screen and Leaderboard
 leaderboardButton.addEventListener("click", showLeaderboard);
 startscreenButton.addEventListener("click", showStartscreen);
+
+submissionButton.addEventListener("click", saveScore);

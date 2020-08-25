@@ -44,7 +44,11 @@
             <h1>Highscores</h1>
             <div id="leaderboardInput" class="hidden">
                 <h2>You scored <span id=finalScore></span> points!</h2>
-                <input>
+                <form>
+                    <label for="initialsBox">Enter Your Initials Here:</label>
+                    <input id="initialsBox" type="text" maxlength="3">
+                    <input id="submissionButton" type="submit">
+                </form>
             </div>
             <table>
                 <tr>
