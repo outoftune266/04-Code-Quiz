@@ -9,7 +9,8 @@
 <body>
     <!--navbar to contain timer and high score link-->
     <head>
-        <a href="*">Highscores</a>
+        <button id="leaderboardButton" class="visible">Highscores</button>
+        <button id="startscreenButton" class="hidden">Start Screen</button>
         <div class="time">
             <p>Seconds Remaining: <span class="timerValue">100</span></p>
         </div>
@@ -34,6 +35,13 @@
                 <h4 id="answerFeedback"></h4>
                 <button id="nextButton" class="hidden">Next Question</h4>
             </div>
+        </div>
+
+        <div id="leaderboard" class="hidden">
+            <h1>Highscores</h1>
+            <div>Player Initials</div>
+            <div>Score</div>
+
         </div>
     </main>
 

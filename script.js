@@ -11,25 +11,31 @@ let answerThree = document.querySelector("#answerThree");
 let answerFour = document.querySelector("#answerFour");
 let answerFeedback = document.querySelector("#answerFeedback");
 let nextButton = document.querySelector("#nextButton");
+let leaderboardButton = document.querySelector("#leaderboardButton")
+let leaderboardScreen = document.querySelector("#leaderboard");
+let startscreenButton = document.querySelector("#startscreenButton");
 let number = 0;
 let clock;
 let totalSeconds = 0;
+let totalScore = 0;
+let playerInitials;
 
 // timer function counts down from totalSeconds, when it reaches zero an alert is displayed and timer function stops
 function timer() {
     display();
     advanceQuestion();
 
-    
 
-    clock = setInterval(function() {
+
+    clock = setInterval(function () {
         totalSeconds++;
 
         timerDisplay.textContent = 100 - totalSeconds;
 
-        if (totalSeconds === 0) {
+        if (totalSeconds === 100) {
             clearInterval(clock);
-            alert("Times up!")
+            alert("Times up!");
+            gameOver();
         };
     }, 1000);
 };
@@ -57,26 +63,46 @@ function answerSubmit(event) {
     nextButton.className = "visible"
     //if (event.target.innerHTML === questions.correctAnswer) {
     //    answerFeedback.innerHTML = "Correct!";
+    totalScore = totalScore + 100;
     //} else {
     //answerFeedback.innerHTML = "Wrong!";
     totalSeconds = totalSeconds + 10;
     //}
     //console.log(event.target);
-    
-    
-    if (number < 9){
-    number++;
-    }  else {
+    console.log(totalScore)
+
+    if (number < 9) {
+        number++;
+    } else {
         gameOver();
     };
 };
 
 function gameOver() {
-    clearInterval(clock);          
+    clearInterval(clock);
     alert("Thanx for playing!");
+    alert("You scored " + totalScore + " points!")
+    playerInitials = prompt("Enter your initials to save your score to the leaderboard.");
+
 };
 
+function showLeaderboard() {
+    startScreen.className = "hidden";
+    questionScreen.className = "hidden";
+    leaderboardButton.className = "hidden";
+    leaderboardScreen.className = "visible";
+    startscreenButton.className = "visible";
+};
 
+function showStartscreen() {
+    startScreen.className = "visible";
+    questionScreen.className = "hidden";
+    leaderboardButton.className = "visible";
+    leaderboardScreen.className = "hidden";
+    startscreenButton.className = "hidden";
+}
+
+console.log(leaderboardButton.textContent)
 
 
 // Start button will execute timer funciton when clicked
@@ -90,3 +116,6 @@ answerFour.addEventListener("click", answerSubmit);
 
 //This button will display the next question when clicked
 nextButton.addEventListener("click", advanceQuestion);
+
+leaderboardButton.addEventListener("click", showLeaderboard);
+startscreenButton.addEventListener("click", showStartscreen);
