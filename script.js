@@ -12,21 +12,23 @@ let answerFour = document.querySelector("#answerFour");
 let answerFeedback = document.querySelector("#answerFeedback");
 let nextButton = document.querySelector("#nextButton");
 let number = 0;
+let clock;
+let totalSeconds = 0;
 
 // timer function counts down from totalSeconds, when it reaches zero an alert is displayed and timer function stops
 function timer() {
     display();
     advanceQuestion();
 
-    let totalSeconds = 100;
+    
 
-    let timer = setInterval(function() {
-        totalSeconds--;
+    clock = setInterval(function() {
+        totalSeconds++;
 
-        timerDisplay.textContent = totalSeconds;
+        timerDisplay.textContent = 100 - totalSeconds;
 
         if (totalSeconds === 0) {
-            clearInterval(timer);
+            clearInterval(clock);
             alert("Times up!")
         };
     }, 1000);
@@ -51,13 +53,16 @@ function display() {
 };
 
 //
-function answerSubmit() {
+function answerSubmit(event) {
     nextButton.className = "visible"
-    /*if ( .innerHTML === questions.correctAnswer) {
-        answerFeedback.innerHTML = "Correct!";
-    } else {
-    answerFeedback.innerHTML = "Wrong!";
-    }*/
+    //if (event.target.innerHTML === questions.correctAnswer) {
+    //    answerFeedback.innerHTML = "Correct!";
+    //} else {
+    //answerFeedback.innerHTML = "Wrong!";
+    totalSeconds = totalSeconds + 10;
+    //}
+    //console.log(event.target);
+    
     
     if (number < 9){
     number++;
@@ -67,7 +72,7 @@ function answerSubmit() {
 };
 
 function gameOver() {
-    
+    clearInterval(clock);          
     alert("Thanx for playing!");
 };
 
