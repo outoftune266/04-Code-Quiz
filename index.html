@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link href="./style.css" rel="stylesheet"> 
+    <link href="./style.css" rel="stylesheet">
 </head>
+
 <body>
     <!--navbar to contain timer and high score link-->
+
     <head>
         <button id="leaderboardButton" class="visible">Highscores</button>
         <button id="startscreenButton" class="hidden">Start Screen</button>
@@ -39,9 +42,16 @@
 
         <div id="leaderboard" class="hidden">
             <h1>Highscores</h1>
-            <div>Player Initials</div>
-            <div>Score</div>
-
+            <div id="leaderboardInput" class="hidden">
+                <h2>You scored <span id=finalScore></span> points!</h2>
+                <input>
+            </div>
+            <table>
+                <tr>
+                    <th>Initials</th>
+                    <th>Score</th>
+                <tr>
+            </table>
         </div>
     </main>
 
@@ -55,4 +65,5 @@
     <script src="./questions.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>

@@ -14,6 +14,8 @@ let nextButton = document.querySelector("#nextButton");
 let leaderboardButton = document.querySelector("#leaderboardButton")
 let leaderboardScreen = document.querySelector("#leaderboard");
 let startscreenButton = document.querySelector("#startscreenButton");
+let leaderboardInput = document.querySelector("#leaderboardInput");
+let finalScoreDisplay = document.querySelector("#finalScore");
 let number = 0;
 let clock;
 let totalSeconds = 0;
@@ -24,8 +26,6 @@ let playerInitials;
 function timer() {
     display();
     advanceQuestion();
-
-
 
     clock = setInterval(function () {
         totalSeconds++;
@@ -81,9 +81,9 @@ function answerSubmit(event) {
 function gameOver() {
     clearInterval(clock);
     alert("Thanx for playing!");
-    alert("You scored " + totalScore + " points!")
-    playerInitials = prompt("Enter your initials to save your score to the leaderboard.");
-
+    showLeaderboard();
+    leaderboardInput.className = "visible";
+    finalScoreDisplay.textContent = totalScore;
 };
 
 function showLeaderboard() {
@@ -117,5 +117,6 @@ answerFour.addEventListener("click", answerSubmit);
 //This button will display the next question when clicked
 nextButton.addEventListener("click", advanceQuestion);
 
+//These buttons allow to switch back and forth from Start Screen and Leaderboard
 leaderboardButton.addEventListener("click", showLeaderboard);
 startscreenButton.addEventListener("click", showStartscreen);
