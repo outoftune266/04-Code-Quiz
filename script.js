@@ -25,8 +25,9 @@ let totalScore = 0;
 let playerInitials;
 let leaderboardEntries = [];
 
-getScores();
 
+//loads any previous score entries from local storage
+getScores();
 function getScores() {
     var storedScores = JSON.parse(localStorage.getItem("leaderboardEntries"));
 
@@ -35,10 +36,27 @@ function getScores() {
     }
 };
 
+//genates leaderboard table
+generateTable();
+function generateTable() {
+    let rows = "<tbody>";
+    for (i = 0; i < leaderboardEntries.length; i++) {
+        rows += "<tr>";
+        rows += "<td>" + leaderboardEntries[i].playerInitials + "</td>";
+        rows += "<td>" + leaderboardEntries[i].totalScore + "</td>";
+        rows += "</tr>";
+    }
+    rows += "</tbody>";
+    document.getElementById("tableData").innerHTML = rows;
+};
+
+
+
 // timer function counts down from totalSeconds, when it reaches zero an alert is displayed and timer function stops
 function timer() {
     display();
     advanceQuestion();
+    totalSeconds = 0;
 
     clock = setInterval(function () {
         totalSeconds++;
@@ -107,9 +125,8 @@ function saveScore(event) {
 
     console.log(leaderboardEntries);
     localStorage.setItem("leaderboardEntries", JSON.stringify(leaderboardEntries));
-    /*document.createElement("tr");
-    document.appendChild()
-    console.log(playerInitials);*/
+    generateTable();
+    leaderboardInput.className = "hidden";
 };
 
 function addEntry(totalScore, playerInitials) {
