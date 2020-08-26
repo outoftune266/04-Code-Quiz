@@ -12,7 +12,7 @@ let questions = [
     {   questionNumber: "2",
         questionContent: "Is Parliament funky?",
         answerOne: "Yes, the Brits can totally get down!",
-        answerTwo: "Maybe? I'm more of a constiutional monarchy kind of person.",
+        answerTwo: "Maybe? I'm more of a constitutional monarchy kind of person.",
         answerThree: "Duh, beam me to the Mothership!",
         answerFour: "No, I don't smoke.",
         correctAnswer: "Duh, beam me to the Mothership!",
@@ -41,8 +41,8 @@ let questions = [
         answerOne: "Charles was more of a ham and swiss guy.",
         answerTwo: "Is the Pope Catholic?",
         answerThree: "Only on a hamburger.",
-        answerFour: "Dang, that chesse has some stank on it!",
-        correctAnswer: "Dang, that chesse has some stank on it!",
+        answerFour: "Dang, that cheese has some stank on it!",
+        correctAnswer: "Dang, that cheese has some stank on it!",
     },
 
     {   questionNumber: "6",
@@ -82,7 +82,7 @@ let questions = [
     },
 
     {   questionNumber: "10",
-        questionContent: "Is Accural Based Accounting funky?",
+        questionContent: "Is Accrual Based Accounting funky?",
         answerOne: "How long is this quiz?",
         answerTwo: "No",
         answerThree: "I don't know what that is",
