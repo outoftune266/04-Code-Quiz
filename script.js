@@ -116,7 +116,6 @@ function gameOver() {
     showLeaderboard();
     leaderboardInput.className = "visible";
     totalScore = totalScore + parseInt(timerDisplay.textContent);
-    console.log(totalScore);
     finalScoreDisplay.textContent = totalScore;
 };
 
