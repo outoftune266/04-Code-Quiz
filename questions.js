@@ -6,7 +6,7 @@ let questions = [
         answerTwo: "Yes",
         answerThree: "You've got to be kidding me",
         answerFour: "I've had it up to here!",
-        correctAnswer: "answerTwo",
+        correctAnswer: "Yes",
     },
 
     {   questionNumber: "2",
@@ -15,7 +15,7 @@ let questions = [
         answerTwo: "No",
         answerThree: "You've got to be kidding me",
         answerFour: "I've had it up to here!",
-        correctAnswer: "answerTwo",
+        correctAnswer: "No",
     },
 
     {   questionNumber: "3",

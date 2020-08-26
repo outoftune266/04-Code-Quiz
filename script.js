@@ -73,6 +73,7 @@ function timer() {
 //Pulls next question from questions object and displays it
 function advanceQuestion() {
     nextButton.className = "hidden";
+    answerFeedback.innerHTML = "";
     questionNumber.innerHTML = questions[number].questionNumber;
     questionContent.innerHTML = questions[number].questionContent;
     answerOne.innerHTML = questions[number].answerOne;
@@ -90,16 +91,18 @@ function display() {
 
 //
 function answerSubmit(event) {
-    nextButton.className = "visible"
-    //if (event.target.innerHTML === questions.correctAnswer) {
-    //    answerFeedback.innerHTML = "Correct!";
-    totalScore = totalScore + 100;
-    //} else {
-    //answerFeedback.innerHTML = "Wrong!";
+    nextButton.className = "visible";
+    var k = questionNumber.textContent;
+    if (event.target.textContent === questions[k - 1].correctAnswer) {
+        answerFeedback.innerHTML = "Correct!";
+        totalScore = totalScore + 100;
+    } else {
+    answerFeedback.innerHTML = "Wrong!";
     totalSeconds = totalSeconds + 10;
-    //}
-    //console.log(event.target);
-    console.log(totalScore)
+    };
+    
+    // this console log is for debugging only
+    console.log(totalScore);
 
     if (number < 9) {
         number++;
@@ -148,10 +151,6 @@ function showStartscreen() {
     leaderboardScreen.className = "hidden";
     startscreenButton.className = "hidden";
 }
-
-console.log(leaderboardButton.textContent)
-
-
 // Start button will execute timer funciton when clicked
 startButton.addEventListener("click", timer);
 
