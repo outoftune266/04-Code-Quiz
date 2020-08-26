@@ -1,4 +1,4 @@
-// Global variables
+// Global variables, questions are housed in questions.js
 let timerDisplay = document.querySelector(".timerValue");
 let startButton = document.querySelector(".start");
 let startScreen = document.querySelector("#startScreen");
@@ -86,7 +86,6 @@ function advanceQuestion() {
 function display() {
     startScreen.className = "hidden";
     questionScreen.className = "visible";
-
 };
 
 //
@@ -126,7 +125,7 @@ function saveScore(event) {
 
     addEntry(totalScore, playerInitials);
 
-    console.log(leaderboardEntries);
+    
     localStorage.setItem("leaderboardEntries", JSON.stringify(leaderboardEntries));
     generateTable();
     leaderboardInput.className = "hidden";
