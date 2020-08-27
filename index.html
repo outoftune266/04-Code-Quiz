@@ -11,24 +11,24 @@
 <body>
     <!--navbar to contain timer and high score link-->
 
-    <head>
+    <nav class="navbar container">
         <button id="leaderboardButton" class="visible">Highscores</button>
         <button id="startscreenButton" class="hidden">Start Screen</button>
         <div class="time">
             <p>Seconds Remaining: <span class="timerValue">100</span></p>
         </div>
-    </head>
+    </nav>
 
     <!--Quiz window-->
-    <main>
-        <div id="startScreen" class="visible">
+    <main class="main-window">
+        <div id="startScreen" class="visible content">
             <h1>The Internet's #1 "Is it Funky?" Quiz!</h1>
             <h2>Instructions:</h2>
             <p>100 points for each correct asnwer! <br>Time off for every incorrect answer. <br>Any remaning time is added to your final score.</p>
             <button class="start">Click to Start</button>
         </div>
 
-        <div id="questionScreen" class="hidden">
+        <div id="questionScreen" class="hidden content">
             <h1>Question #<span id="questionNumber">0</span></h1>
             <h2 id="questionContent">Question goes here?</h2>
             <div id="answers">
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div id="leaderboard" class="hidden">
+        <div id="leaderboard" class="hidden content">
             <h1>Highscores</h1>
             <div id="leaderboardInput" class="hidden">
                 <h2>You scored <span id=finalScore></span> points!</h2>
@@ -64,7 +64,7 @@
     </main>
 
     <!--Attribution-->
-    <footer>
+    <footer class="footer">
         <p>Designed and built by Zak Monnet</p>
         <p>&#169 Zak Monnet, 2020</p>
     </footer>

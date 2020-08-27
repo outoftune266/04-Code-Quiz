@@ -62,7 +62,7 @@ function timer() {
         totalSeconds++;
         timerDisplay.textContent = 100 - totalSeconds;
 
-        if (totalSeconds === 100) {
+        if (totalSeconds >= 100) {
             clearInterval(clock);
             alert("Times up!");
             gameOver();
@@ -85,7 +85,7 @@ function advanceQuestion() {
 //Hides start screen and displays question screen
 function display() {
     startScreen.className = "hidden";
-    questionScreen.className = "visible";
+    questionScreen.className = "visible content";
 };
 
 //
@@ -140,12 +140,12 @@ function showLeaderboard() {
     startScreen.className = "hidden";
     questionScreen.className = "hidden";
     leaderboardButton.className = "hidden";
-    leaderboardScreen.className = "visible";
+    leaderboardScreen.className = "visible content";
     startscreenButton.className = "visible";
 };
 
 function showStartscreen() {
-    startScreen.className = "visible";
+    startScreen.className = "visible content";
     questionScreen.className = "hidden";
     leaderboardButton.className = "visible";
     leaderboardScreen.className = "hidden";
