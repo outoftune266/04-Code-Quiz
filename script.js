@@ -93,13 +93,15 @@ function answerSubmit(event) {
     nextButton.className = "visible";
     var k = questionNumber.textContent;
     if (event.target.textContent === questions[k - 1].correctAnswer) {
+        answerFeedback.className = "correct";
         answerFeedback.innerHTML = "Correct!";
         totalScore = totalScore + 100;
     } else {
-    answerFeedback.innerHTML = "Wrong!";
-    totalSeconds = totalSeconds + 10;
+        answerFeedback.className = "wrong";
+        answerFeedback.innerHTML = "Wrong!";
+        totalSeconds = totalSeconds + 10;
     };
-    
+
     // this console log is for debugging only
     console.log(totalScore);
 
@@ -126,7 +128,7 @@ function saveScore(event) {
 
     addEntry(totalScore, playerInitials);
 
-    
+
     localStorage.setItem("leaderboardEntries", JSON.stringify(leaderboardEntries));
     generateTable();
     leaderboardInput.className = "hidden";
@@ -151,6 +153,9 @@ function showStartscreen() {
     leaderboardScreen.className = "hidden";
     startscreenButton.className = "hidden";
 }
+
+
+
 // Start button will execute timer funciton when clicked
 startButton.addEventListener("click", timer);
 
@@ -160,6 +165,8 @@ answerTwo.addEventListener("click", answerSubmit);
 answerThree.addEventListener("click", answerSubmit);
 answerFour.addEventListener("click", answerSubmit);
 
+
+
 //This button will display the next question when clicked
 nextButton.addEventListener("click", advanceQuestion);
 
@@ -168,3 +175,4 @@ leaderboardButton.addEventListener("click", showLeaderboard);
 startscreenButton.addEventListener("click", showStartscreen);
 
 submissionButton.addEventListener("click", saveScore);
+

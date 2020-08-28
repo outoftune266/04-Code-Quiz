@@ -12,7 +12,7 @@
     <!--navbar to contain timer and high score link-->
 
     <nav class="navbar container">
-        <button id="leaderboardButton" class="visible">Highscores</button>
+        <button id="leaderboardButton" class="visible">Leaderboard</button>
         <button id="startscreenButton" class="hidden">Start Screen</button>
         <div class="time">
             <p>Seconds Remaining: <span class="timerValue">100</span></p>
@@ -23,8 +23,9 @@
     <main class="main-window">
         <div id="startScreen" class="visible content">
             <h1>The Internet's #1 "Is it Funky?" Quiz!</h1>
-            <h2>Instructions:</h2>
-            <p>100 points for each correct asnwer! <br>Time off for every incorrect answer. <br>Any remaning time is added to your final score.</p>
+            <h2>How well do you know your Funk?</h2>
+            <p>100 points for each correct asnwer! <br>Time off for every incorrect answer. <br>Any remaning time is
+                added to your final score.</p>
             <button class="start">Click to Start</button>
         </div>
 
@@ -32,12 +33,14 @@
             <h1>Question #<span id="questionNumber">0</span></h1>
             <h2 id="questionContent">Question goes here?</h2>
             <div id="answers">
-                <button id="answerOne">Answer 1</button><br>
-                <button id="answerTwo">Answer 2</button><br>
-                <button id="answerThree">Answer 3</button><br>
-                <button id="answerFour">Answer 4</button><br>
+                <button id="answerOne" class="options">Answer 1</button><br>
+                <button id="answerTwo" class="options">Answer 2</button><br>
+                <button id="answerThree" class="options">Answer 3</button><br>
+                <button id="answerFour" class="options">Answer 4</button><br>
+            </div>
+            <div class="feedback">
                 <h4 id="answerFeedback"></h4>
-                <button id="nextButton" class="hidden">Next Question</h4>
+                <button id="nextButton" class="hidden">Next Question</button>
             </div>
         </div>
 
@@ -51,7 +54,7 @@
                     <input id="submissionButton" type="submit">
                 </form>
             </div>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Initials</th>
