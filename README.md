@@ -14,4 +14,6 @@ When the game is over you can enter your initials and they will be saved in the 
 
 Runs on one HTML file, elements are hidden and made visible as needed
 
-https://outoftune266.github.io/04-Code-Quiz/
+
+See it in action:
+[Click Me](https://outoftune266.github.io/04-Code-Quiz/)
