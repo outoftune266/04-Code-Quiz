@@ -12,7 +12,9 @@ Any remaining time is added to your final score
 
 When the game is over you can enter your initials and they will be saved in the locally stored leaderboard
 
-Runs on one HTML file, elements are hidden and made visible as needed
+Runs on one HTML file
+
+Javascript dynamically changes HTML and CSS elements to display apprioate content based on context
 
 
 See it in action:
